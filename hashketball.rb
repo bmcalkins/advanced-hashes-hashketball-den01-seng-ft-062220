@@ -151,4 +151,9 @@ def team_colors(name)
   end  
 end
 
+def team_names
+  game_hash.collect do |team|
+    team[1][:team_name]
+  end
+end
 # Write code here
