@@ -139,4 +139,8 @@ def num_points_scored(name)
   get_player_data(name, :points)
 end
 
+def shoe_size(name)
+  get_player_data(name, :shoe)
+end
+
 # Write code here
