@@ -156,4 +156,14 @@ def team_names
     team[1][:team_name]
   end
 end
+
+def player_numbers(name)
+  game_hash.each do |team|
+   if team[1][:team_name] == name 
+     return team[1][:players].collect do |player|
+       player[:number]
+     end
+   end
+  end
+end
 # Write code here
