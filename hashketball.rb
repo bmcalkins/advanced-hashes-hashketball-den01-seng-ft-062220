@@ -126,15 +126,22 @@ def game_hash
   }
 end
 
-def get_player_data(name, key)
-  game_hash.each do |team|
+def player_stats(name)
+    game_hash.each do |team|
     team[1][:players].each do |player|
       if player[:player_name] == name 
-        return player[key]
+        return player
       end 
     end
   end
 end
+
+def get_player_data(name, key)
+  player_stats(name)[key]
+end 
+
+
+
 def num_points_scored(name)
   get_player_data(name, :points)
 end
@@ -167,13 +174,6 @@ def player_numbers(name)
   end
 end
 
-def player_stats(name)
-    game_hash.each do |team|
-    team[1][:players].each do |player|
-      if player[:player_name] == name 
-        return player
-      end 
-    end
-  end
-end
+
+
 # Write code here
